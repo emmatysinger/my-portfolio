@@ -1,0 +1,144 @@
+:root {
+  --color-green: #A9BA9D;
+  --color-accent: #4086AA;
+}
+
+html {
+  accent-color: var(--color-accent);
+  color-scheme: light dark;
+}
+
+body {
+    /* Set line height to 1.5 times the font size
+       and use the OS’s UI font as the website font
+     */
+    font: 100%/1.5 system-ui;
+    max-width: 100ch;
+    margin-inline: max(1em, (100% - 100ch) / 2);
+    background-color: canvas; /* Background color that adapts to light/dark mode */
+    color: canvastext; /* Text color that adapts to light/dark mode */
+   }
+
+
+nav {
+    --border-color: oklch(80% 3% 200 / 40%);
+    display: flex;
+    margin-bottom: 1em; /* Spacing below the navigation bar */
+    border-bottom: 1px solid var(--border-color); /* Subtle bottom border */
+    position: relative;
+    z-index: 5;
+}
+
+nav a {
+    flex: 1;
+    text-align: center; /* Center the text in each link */
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Use the parent's text color */
+    padding: 0.5em; /* Add some padding for spacing */
+}
+
+nav a.current {
+    border-bottom: 0.4em solid var(--border-color); /* Thicker bottom border for the current page link */
+    padding-bottom: calc(0.5em - 0.4em); /* Adjust bottom padding */
+}
+
+nav a:hover {
+    background-color: oklch(from var(--color-accent) 95% 5% h);
+    border-bottom: 0.4em solid var(--color-accent);
+}
+
+
+nav ul, nav li {
+    display: contents;
+}
+
+input, textarea, button {
+    font: inherit;
+}
+
+form {
+  display: grid;
+  grid-template-columns: auto 1fr; /* One column for labels and one for fields */
+  gap: 1em; /* Adds some space between the rows and columns */
+  max-width: 600px; /* Optional: to prevent the form from becoming too wide */
+  margin: auto; /* Centers the form in the page */
+}
+
+form label {
+  /* Reset any previous styles if necessary */
+  margin-block: 0;
+}
+
+form input, form textarea{
+  /* Reset any previous styles if necessary */
+  display: block; /* Defaults the elements to block to take full width of their grid column */
+  width: 100%; /* Ensures the form controls use the full width of their grid column */
+  box-sizing: border-box; /* Includes padding and border in the element's width */
+  padding: 0.5em; /* Adjust padding as needed */
+  border: 1px solid #ccc; /* Sets a border for the inputs */
+}
+
+form button {
+  grid-column: 1 / -1; /* Span across all columns */
+  width: 100%; /* Full width */
+  padding: 0.5em; /* Adjust padding to your preference */
+  border: 1px solid #ccc; /* A light grey border, adjust as needed */
+  background-color: #ccc; /* Background color, can be adjusted */
+  cursor: pointer; /* Changes the cursor to a pointer when hovering over the button */
+}
+
+img {
+  max-width: 100%;
+  height: auto; /* This will maintain the aspect ratio of the image */
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  gap: 1em; /* Adjust the gap as necessary */
+}
+
+.projects article {
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* Allocate the space for heading, image, and paragraph */
+  grid-row: span 3; /* Make the article span 3 rows */
+}
+
+.projects h2 {
+  margin: 0; /* Remove default margin from h2 elements */
+}
+
+/* Ensure images don't exceed their grid area */
+.projects img {
+  max-width: 100%;
+  height: auto; /* Maintain the aspect ratio of the image */
+  display: block; /* Remove any extra space below the image */
+}
+
+/* Align the text of the paragraph */
+.projects p {
+  margin: 0; /* Optional: Adjust paragraph margins as necessary */
+}
+
+.color-scheme {
+  position: absolute; /* Takes the label out of the normal document flow */
+  top: 1rem; /* Distance from the top edge of the viewport */
+  right: 1rem; /* Distance from the right edge of the viewport */
+  font-size: 80%; /* Makes the font size smaller */
+  font-family: inherit; /* Ensures that the font is consistent with the body */
+}
+
+/* Optionally, ensure select elements inherit the font-family */
+select {
+  font: inherit;
+}
+
+/* If you have other positioned elements or a header, you might need to adjust the z-index */
+.color-scheme {
+  z-index: 10; /* Ensures the switcher is above other content */
+}
+
+
+
+
+

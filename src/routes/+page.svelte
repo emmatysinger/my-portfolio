@@ -1,2 +1,4 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<h1>Emma Tysinger</h1>
+<p>Hi I'm Emma! This is my personal site made for Lab-1 on 6.C85.</p>
+<img width=500 src="images/emma.jpg"/>
+
